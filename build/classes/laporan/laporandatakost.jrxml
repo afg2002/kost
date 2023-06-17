@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c82f9a4a-0692-4cd7-b370-9bccd26c7b49">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0FFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DataKost" uuid="2f0f6ced-ebbc-4d3a-995f-b047208376ec">
+		<queryString>
+			<![CDATA[SELECT ROW_NUMBER() OVER() AS ranking,
+  daftar_kost.nama_pemilik,
+  daftar_kost.nama_kost,
+  daftar_kost.no_telp,
+  daftar_kost.alamat
+FROM ranking INNER JOIN daftar_kost ON ranking.id_dk = daftar_kost.id_dk ORDER BY ranking.nilai_bobot DESC;]]>
+		</queryString>
+		<field name="ranking" class="java.math.BigInteger"/>
+		<field name="nama_pemilik" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nama_kost" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="no_telp" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="alamat" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT pembayaran.id_pembayaran, pembayaran.id_pelanggan,pelanggan.nama_pelanggan,daftar_kost.nama_kost,pelanggan.no_telp,daftar_kost.harga, pembayaran.jumlah_bayar FROM pembayaran INNER JOIN pelanggan ON pelanggan.id_pelanggan = pembayaran.id_pelanggan INNER JOIN daftar_kost ON daftar_kost.id_dk = pelanggan.id_dk ;]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="97" width="555" height="1" uuid="7163444c-3b25-47d4-97d5-cbf1a77b0b31"/>
+			</line>
+			<staticText>
+				<reportElement x="135" y="19" width="400" height="20" uuid="ea199fd6-142d-4ef5-90cc-5070c1d96338"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistem Pendukung Keputusan Pemilihan Tempat Kost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="47" width="400" height="20" uuid="7d0d5bc2-9981-4805-8f90-ae70d298639a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Menggunakan Metode AHP Berbasis Java]]></text>
+			</staticText>
+			<image>
+				<reportElement x="28" y="5" width="135" height="78" uuid="6afa4c23-0cc6-4e4d-98ec-d1e01f2cedd1"/>
+				<imageExpression><![CDATA["C:\\Users\\afgha\\Documents\\NetBeansProjects\\Kost\\src\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="178" y="23" width="205" height="35" uuid="7c5cb6a5-77f7-4d0e-b96c-19d01948b75a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Kost]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT} == 1]]></printWhenExpression>
+			<componentElement>
+				<reportElement key="table 6" style="table 6" x="146" y="26" width="360" height="50" uuid="1c62d402-371e-4b92-b544-0a9c67d41678"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DataKost" uuid="0b906250-5945-47c6-b4a1-9acd79270072">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="6b0c71a3-4526-4a9b-a308-78729baf63e9">
+						<jr:columnHeader style="table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e4396c04-8d60-4315-be11-22e120efb9d4"/>
+								<text><![CDATA[ranking]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 6_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="d9e05ae0-1178-446e-8323-64bf0a16b1da"/>
+								<textFieldExpression><![CDATA[$F{ranking}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c00a4c7d-7882-41b7-b693-fa3547277cfa">
+						<jr:columnHeader style="table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f0fc0d1a-dac4-43ce-bc74-e28181eb4e47"/>
+								<text><![CDATA[nama_pemilik]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 6_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="23dc677b-fc66-423e-8d36-eb96d3b858b2"/>
+								<textFieldExpression><![CDATA[$F{nama_pemilik}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e2052766-0ed8-479e-b643-e6faeb60031d">
+						<jr:columnHeader style="table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="a668047c-aac5-4757-8755-2b39d1e3286b"/>
+								<text><![CDATA[nama_kost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 6_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="a9c7336e-0a24-4b52-97a4-15158cad7342"/>
+								<textFieldExpression><![CDATA[$F{nama_kost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="8a1c2b1a-61f8-47a1-8acf-d5c003196d05">
+						<jr:columnHeader style="table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="82873fee-13b3-4623-9ce5-521223dc492c"/>
+								<text><![CDATA[no_telp]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 6_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="b684b7ad-4fec-4e67-b05c-58decdbc3057"/>
+								<textFieldExpression><![CDATA[$F{no_telp}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="0b278353-76d6-4a37-bbf3-2d711e505317">
+						<jr:columnHeader style="table 6_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="351f34b9-15a6-46c9-920b-d8ee6b90a5bc"/>
+								<text><![CDATA[alamat]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 6_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="243e66c5-6128-4a36-a939-a316b5a834f1"/>
+								<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="172" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="407" y="0" width="128" height="27" uuid="00a0fa6e-d380-4abf-b0a6-29f96529ddb4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jakarta, " + new SimpleDateFormat("dd MMMM yyyy", new Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="407" y="38" width="128" height="20" uuid="47cce258-a92d-40bb-988a-a348d282578c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Mengetahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="58" width="128" height="20" uuid="ff269401-2a69-477a-9ecd-e2bd360cd080"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Pemilik Kost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="150" width="128" height="20" uuid="75865a0c-2fb8-461c-a60b-61e7bc2ecd19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Suyatni]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="53" splitType="Stretch"/>
+	</summary>
+</jasperReport>
